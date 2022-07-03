@@ -31,31 +31,27 @@ class _InputPageState extends State<InputPage> {
                 child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender=Gender.male;
-                      });
-                    },
-                    child: Reusable_Card(
-                      colour: selectedGender== Gender.male ?activeCardColor:inactiveCardColor,
-                      cardChild: IconContent(
-                          iconName: FontAwesomeIcons.mars, iconText: 'Male'),
-                    ),
+                  child: Reusable_Card(
+                    colour: selectedGender== Gender.male ?activeCardColor:inactiveCardColor,
+                    cardChild: IconContent(
+                        iconName: FontAwesomeIcons.mars, iconText: 'Male'),
+                      onPress:(){
+                        setState(() {
+                          selectedGender=Gender.male;
+                        });
+                      }
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender=Gender.female;
-                      });
-                    },
-                    child: Reusable_Card(
-                      colour: selectedGender== Gender.female ?activeCardColor:inactiveCardColor,
-                      cardChild: IconContent(
-                          iconName: FontAwesomeIcons.venus, iconText: 'Female'),
-                    ),
+                  child: Reusable_Card(
+                    colour: selectedGender== Gender.female ?activeCardColor:inactiveCardColor,
+                    cardChild: IconContent(
+                        iconName: FontAwesomeIcons.venus, iconText: 'Female'),
+                      onPress:(){
+                        setState(() {
+                          selectedGender=Gender.female;
+                        });
+                      }
                   ),
                 ),
               ],
