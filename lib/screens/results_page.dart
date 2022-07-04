@@ -1,11 +1,19 @@
 import 'package:bmi/components/bottom_button.dart';
-import 'package:bmi/screens//input_page.dart';
 import 'package:bmi/components/reusable_card.dart';
 import 'package:flutter/material.dart';
 import 'package:bmi/constants.dart';
-import 'package:bmi/screens/results_page.dart';
+
 
 class ResultPage extends StatelessWidget {
+
+  ResultPage({required this.bmiResult,required this.resultText,required this.interpretation});
+
+
+  final String bmiResult;
+  final String resultText;
+  final String interpretation;
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,17 +40,17 @@ class ResultPage extends StatelessWidget {
               cardChild: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: const [
+                children: <Widget> [
                   Text(
-                    'Normal',
+                    resultText,
                     style: kresultStyle,
                   ),
                   Text(
-                    '18.3',
+                    bmiResult,
                     style: kBMItextStyle,
                   ),
                   Text(
-                    'Your BMI is low, you should eat quite a lot',
+                    interpretation,
                     textAlign: TextAlign.center,
                     style: kbodyTextStyle,
                   )

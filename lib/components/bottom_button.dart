@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../constants.dart';
+import 'package:bmi/constants.dart';
 
 class BottomButton extends StatelessWidget {
 
